@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         textContraseña = findViewById(R.id.contraseña)
         btn_ingresar = findViewById(R.id.boton)
         btn_ingresar.setOnClickListener{
-            Toast.makeText(this, textContraseña.text, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "IsaacPete", Toast.LENGTH_SHORT).show()
         }
     }
 
