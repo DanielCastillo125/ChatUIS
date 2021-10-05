@@ -37,6 +37,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun createUser(){
+        val email =usuario.text.toString()
+        val password =contraseña.text.toString()
+        auth.createUserWithEmailAndPassword(email , password ).addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                checkUser()
+            }else{
+                task.exception?.let{
+                    Toast.makeText(baseContext,it.message,Toast.LENGTH_LONG).show()
+                }
+            }
+        }
 
     }
 
