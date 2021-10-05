@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "956069641137",
+    "project_id": "chatuis-fe8ad",
+    "storage_bucket": "chatuis-fe8ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956069641137:android:ce12623ba0e154a19a5b90",
+        "android_client_info": {
+          "package_name": "com.example.chatuisapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956069641137-m42lj3v71sem2k9vmisul6rvd61qv9i3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMJwDhQUmnVac_cCaQMg8ey-SLZNNLI80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956069641137-m42lj3v71sem2k9vmisul6rvd61qv9i3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -29,6 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/view"
         app:srcCompat="@drawable/uisblanco" />
 
+
     <EditText
         android:id="@+id/usuario"
         android:layout_width="wrap_content"
@@ -39,12 +40,12 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Usuario"
         app:layout_constraintBottom_toTopOf="@+id/contraseña"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
-
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.525" />
 
     <EditText
         android:id="@+id/contraseña"
