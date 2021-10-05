@@ -12,7 +12,7 @@ import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
-    private val auth =Firebase.auth
+    private val auth = Firebase.auth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         if(currentUser != null){
-            val intent = Intent(this,ListOfChatsActivity::class.java)
-            intent.putExtra( "user",currentUser.email)
+            val intent = Intent(this, ListOfChatsActivity::class.java)
+            intent.putExtra("user", currentUser.email)
             startActivity(intent)
 
             finish()
@@ -52,14 +52,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser(){
-        val email =usuario.text.toString()
-        val password =contraseña.text.toString()
-        auth.signInWithEmailAndPassword(email , password ).addOnCompleteListener { task ->
+        val email = usuario.text.toString()
+        val password = contraseña.text.toString()
+        auth.signInWithEmailAndPassword(email, password ).addOnCompleteListener { task ->
             if (task.isSuccessful){
                 checkUser()
             }else{
                 task.exception?.let{
-                    Toast.makeText(baseContext,it.message,Toast.LENGTH_LONG).show()
+                    Toast.makeText(baseContext, it.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
