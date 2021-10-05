@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.LoginActivity">
 
     <View
         android:id="@+id/view"
@@ -18,6 +18,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/imagenUIS"
+        android:layout_width="100dp"
+        android:layout_height="95dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:srcCompat="@drawable/uisblanco" />
+
     <EditText
         android:id="@+id/usuario"
         android:layout_width="wrap_content"
@@ -28,6 +39,7 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:text="Usuario"
         app:layout_constraintBottom_toTopOf="@+id/contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,8 +61,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
+    <TextView
+        android:id="@+id/textoRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Aún no estás registrado?"
+        app:layout_constraintBottom_toTopOf="@+id/registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
-        android:id="@+id/boton"
+        android:id="@+id/ingresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -59,14 +80,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contraseña" />
 
-    <ImageView
-        android:id="@+id/odi"
-        android:layout_width="100dp"
-        android:layout_height="95dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:srcCompat="@drawable/uisblanco" />
+    <Button
+        android:id="@+id/registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
