@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chatuisapp.models.Chat
 import com.example.chatuisapp.adapters.ChatAdapter
 import com.example.chatuisapp.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_list_of_chats.*
@@ -14,7 +16,7 @@ import java.util.*
 
 class ListOfChatsActivity : AppCompatActivity() {
     private var user = ""
-
+    private val auth1 = Firebase.auth
     private var db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,7 @@ class ListOfChatsActivity : AppCompatActivity() {
         if (user.isNotEmpty()){
             initViews()
         }
+        logOut()
     }
 
     private fun initViews(){
@@ -85,5 +88,14 @@ class ListOfChatsActivity : AppCompatActivity() {
         intent.putExtra("chatId", chatId)
         intent.putExtra("user", user)
         startActivity(intent)
+    }
+
+    private fun logOut(){
+        logOutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
