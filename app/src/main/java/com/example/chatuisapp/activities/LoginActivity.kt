@@ -1,14 +1,13 @@
 package com.example.chatuisapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.chatuisapp.R
-import kotlinx.android.synthetic.main.activity_login.*
 import android.content.Intent
+import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.chatuisapp.R
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -37,32 +36,34 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun createUser(){
-        val email =usuario.text.toString()
-        val password =contraseña.text.toString()
-        auth.createUserWithEmailAndPassword(email , password ).addOnCompleteListener { task ->
-            if (task.isSuccessful){
+        val email = usuario.text.toString()
+        val password = contraseña.text.toString()
+
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if(task.isSuccessful){
                 checkUser()
-            }else{
-                task.exception?.let{
-                    Toast.makeText(baseContext,it.message,Toast.LENGTH_LONG).show()
+            } else {
+                task.exception?.let {
+                    Toast.makeText(baseContext, it.message, Toast.LENGTH_LONG).show()
                 }
             }
-        }
 
+        }
     }
 
     private fun loginUser(){
         val email = usuario.text.toString()
         val password = contraseña.text.toString()
-        auth.signInWithEmailAndPassword(email, password ).addOnCompleteListener { task ->
-            if (task.isSuccessful){
+
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if(task.isSuccessful){
                 checkUser()
-            }else{
-                task.exception?.let{
+            } else {
+                task.exception?.let {
                     Toast.makeText(baseContext, it.message, Toast.LENGTH_LONG).show()
                 }
             }
+
         }
     }
-
 }

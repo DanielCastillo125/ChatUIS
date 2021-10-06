@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         >
+        <activity android:name=".activities.ChatActivity"></activity>
+        <activity android:name=".activities.ListOfChatsActivity" />
         <activity android:name=".activities.LoginActivity"
             android:exported="true">
             <intent-filter>
